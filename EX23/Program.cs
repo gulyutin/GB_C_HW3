@@ -2,29 +2,10 @@
 // 3 -> 1, 8, 27
 // 5 -> 1, 8, 27, 64, 125
 
-Console.Write("Введите число: ");
-int cube = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите число");
+int number = Convert.ToInt32(Console.ReadLine());
 
-void Cube(int[] cube)
+for (int i = 1; i <= number; i++)
 {
-  int counter = 0;
-  int length = cube.Length;
-  while (counter <  length){
-    cube[counter] = Convert.ToInt32(Math.Pow(counter, 3));
-    counter++;
-  }
+    Console.Write($"{i * i * i}, ");
 }
-
-void PrintArray(int[] coll)
-{
-  int count = coll.Length;
-  int index = 0;
-  while(index < count){
-    Console.Write(coll[index]+ " ");
-    index++;
-  }
-} 
-
-int[] array = new int[cube+1];
-Cube(array);
-PrintArray(array);
