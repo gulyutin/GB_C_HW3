@@ -2,17 +2,19 @@
 
 Console.WriteLine("Введите число: ");
 string number = Console.ReadLine();
+int Number = Convert.ToInt32(number);
 
-void CheckingNumber(string number)
+if (Number > 9999 && Number < 100000)
 {
-  if (number[0]==number[4] || number[1]==number[3]){
-    Console.WriteLine($"{number} - палиндром.");
-  }
-  else Console.WriteLine($"{number} - не палиндром.");
+    int a = Number % 10;
+    int b = Number % 100 / 10;
+    int c = Number % 1000 / 100;
+    int d = Number % 10000 / 1000;
+    int e = Number % 100000 / 10000;
+    if (a == e && b == d)
+    {
+        Console.WriteLine($"{Number} - палиндром.");
+    }
+    else Console.WriteLine($"{Number} - не палиндром.");
 }
-
-if (number!.Length == 5)
-{
-  CheckingNumber(number);
-}
-else Console.WriteLine($"Введи правильное число");
+else Console.WriteLine("Введите пятизначное число");
